@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme{
+  --color-mainBg: #f0f3f2;
+  --color-primary: #00cc74;
+  --color-darkPrimary: #01854c;
+}
+
+@utility container{
+  margin: 0 auto;
+   @media (width >= 40rem /* 640px */) {
+        max-width: 40rem /* 640px */;
+    }
+    @media (width >= 45rem /* 720px */) {
+        max-width: 45rem /* 720px */;
+    }
+    @media (width >= 60rem /* 960px */) {
+        max-width: 60rem /* 960px */;
+    }
+    @media (width >=71.25rem /* 1140px */) {
+        max-width: 1140px /* 1280px */;
+    }
+    @media (width >= 96rem /* 1536px */) {
+        max-width: 96rem /* 1536px */;
+    }
+}
+.active{
+  font-weight: 900;
+  color: #00cc74;
+}
+body {
+  font-family: 'Outfit Variable', sans-serif;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+@layer components{
+  .input{
+    @apply bg-white border border-[#9CA3C1] text-darkPrimary focus:outline-none focus:border-primary rounded-lg px-3 py-2 mt-0.5 text-sm w-full
+  }
+  .btn{
+    @apply transition duration-200 bg-primary hover:bg-darkPrimary focus:bg-darkPrimary focus:shadow-sm focus:outline-none text-white px-3 py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block mt-1 cursor-pointer
+  }
+}
