@@ -49,11 +49,24 @@ export default function CategorySlider() {
           {/* Swiper */}
           <Swiper
             modules={[Navigation, Autoplay]}
-            slidesPerView={6}
             loop={true}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+              },
+              640: {
+                slidesPerView: 3,
+              },
+              960: {
+                slidesPerView: 4,
+              },
+              1024: {
+                slidesPerView: 6,
+              },
             }}
             onSwiper={(swiper) => {
               // Assign buttons after DOM renders
