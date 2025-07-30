@@ -1,12 +1,84 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🛒 E-commerce React App
 
-Currently, two official plugins are available:
+A modern, responsive e-commerce web application built with **React**, **React Router**, and **Tailwind CSS**, featuring full shopping functionality including cart, wishlist, authentication, and order tracking.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**🔗 Live Demo:** [https://abdelrahmanjr246.github.io/E-commerce/](https://abdelrahmanjr246.github.io/E-commerce/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+* 🏠 **Homepage** with product and category sliders
+* 🛍️ **Product Listing** with filtering, sorting, and pagination
+* 🔍 **Product Details** with add to cart/wishlist
+* ❤️ **Wishlist** (protected route)
+* 🛒 **Cart** with quantity and removal controls
+* 🔐 **Authentication** (register, login, forgot/reset password)
+* 📦 **Orders Page** for logged-in users
+* 🌙 Fully **responsive** layout using Tailwind CSS
+* ☁️ **Context API** for Auth, Cart, and Wishlist state
+* 🔔 Toast feedback with `react-hot-toast`
+
+---
+
+## 🧱 Tech Stack
+
+| Tech               | Purpose                             |
+| ------------------ | ----------------------------------- |
+| ⚛️ React           | UI library                          |
+| 🧭 React Router    | Client-side routing                 |
+| 💨 Tailwind CSS    | Styling                             |
+| 🧠 Context API     | Global state (Auth, Cart, Wishlist) |
+| ✅ Formik + Yup     | Form validation                     |
+| 🍞 react-hot-toast | Notifications                       |
+| 🐱 GitHub Pages    | Deployment                          |
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+├── Components/
+├── Context/
+├── Pages/
+├── Protected/
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 📦 Getting Started
+
+```bash
+git clone https://github.com/Abdelrahmanjr246/E-commerce.git
+cd E-commerce
+npm install
+npm run dev
+```
+
+To build and preview production:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 🛠️ Deployment
+
+Deployed using GitHub Pages via Vite.
+In `vite.config.js`, the `base` is set based on environment:
+
+```js
+base: mode === 'production' ? '/E-commerce/' : '/'
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
