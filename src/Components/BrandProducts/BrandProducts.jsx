@@ -34,7 +34,7 @@ export default function BrandProducts({ brandId }) {
         <main className="container mt-16 pt-[30px] pb-[20px] ">  
             <GoBack/>
         
-            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+            <section className="grid grid-cols-12 max-md:px-16 gap-6 p-4">
                 {products.length === 0 ? (
                 <div className="col-span-full flex justify-center items-center">
                     <img
