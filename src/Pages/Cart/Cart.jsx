@@ -29,7 +29,7 @@ export default function Cart() {
 
   async function payOnline(values){
     try{
-      const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=https://abdelrahmanjr246.github.io/E-commerce/`,{
+      const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=https://abdelrahmanjr246.github.io/E-commerce/allorders`,{
         shippingAddress: values
       },{
         headers: { token: localStorage.getItem('token') }
