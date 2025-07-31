@@ -31,7 +31,7 @@ export default function BrandProducts({ brandId }) {
   return (
     <>
         <BackToTop/>
-        <main className="container mt-16 pt-[30px] pb-[20px] ">  
+        <main className="container mt-16 pt-[30px] pb-[30px] ">  
             <GoBack/>
         
             <section className="grid grid-cols-12 max-md:px-16 gap-6 p-4">
