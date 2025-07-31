@@ -67,10 +67,10 @@ export default function Register() {
   }
 
   return (
-    <div className="flex flex-col justify-center mt-16 sm:py-12">
+    <div className="flex flex-col justify-center pt-[80px] pb-[30px]">
       <div className="p-3 xs:p-0 mx-auto max-w-lg w-full">
         
-        <h1 className="font-bold text-center text-primary text-2xl mb-1 flex justify-center gap-1.5"><User /> Register Now</h1>  
+        <h1 className="font-bold text-center text-primary text-2xl my-6 flex justify-center gap-1.5"><User /> Register Now</h1>  
 
         <div className="rounded-lg w-full m-auto">
           <form onSubmit={formik.handleSubmit}>

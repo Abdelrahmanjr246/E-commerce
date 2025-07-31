@@ -73,9 +73,9 @@ export default function Login() {
     setShowPass(showPass == 'password'? 'text' : 'password')
   }
   return (
-    <div className=" mt-16 flex flex-col justify-center sm:py-12">
-      <div className="p-3 xs:p-0 mx-auto max-w-lg w-full">
-        <h1 className="font-bold text-center text-primary text-2xl mb-1 flex justify-center gap-1.5"><User /> Login</h1>  
+    <div className="pt-[80px] pb-[30px] flex flex-col justify-center sm:py-12">
+      <div className="p-3 mx-auto max-w-lg w-full">
+        <h1 className="font-bold text-center text-primary text-2xl my-6 flex justify-center gap-1.5"><User /> Login</h1>  
 
         <div className="rounded-lg w-full m-auto">
           <form onSubmit={formik.handleSubmit}>

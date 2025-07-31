@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from '../Card/Card';
 import Loading from '../Loading/Loading';
 import BackToTop from '../BackToTop/BackToTop';
-
 import notFoundPhoto from '../../assets/no-product-found-DncxVh9z.png';
 import GoBack from '../goBack/goBack';
 

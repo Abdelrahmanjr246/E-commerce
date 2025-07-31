@@ -17,8 +17,12 @@ export default function CategorySlider() {
   const nextRef = useRef(null);
 
   async function getAllCategories() {
-    const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/categories');
-    setCategories(data.data);
+    try {
+      const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/categories');
+      setCategories(data.data);
+    } catch (error) {
+        console.error('Failed to fetch categories:', error);
+    }
   }
 
   useEffect(() => {
@@ -49,6 +53,7 @@ export default function CategorySlider() {
           {/* Swiper */}
           <Swiper
             modules={[Navigation, Autoplay]}
+            navigation={{}}
             loop={true}
             autoplay={{
               delay: 4000,

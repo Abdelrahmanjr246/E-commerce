@@ -22,7 +22,7 @@ export default function Card({ itemInfo }) {
       <article
         data-aos="fade-up"
         data-aos-duration="500"
-        className="productCard group  flex flex-col gap-3   shadow-md rounded-md overflow-hidden"
+        className="productCard group flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 shadow-md rounded-md overflow-hidden"
       >
         <header className="relative">
           <img

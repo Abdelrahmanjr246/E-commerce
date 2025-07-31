@@ -1,14 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import '@fontsource-variable/outfit'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import '@fontsource-variable/outfit';
+import './index.css';
+import App from './App.jsx';
+import OnlineStatusProvider from './Context/OnlineStatusContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/E-commerce">
+    <OnlineStatusProvider>
       <App />
-    </BrowserRouter>
+    </OnlineStatusProvider>
   </StrictMode>,
-)
+);

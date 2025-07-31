@@ -49,14 +49,14 @@ export default function Categories() {
         Shop by category
       </h2>
 
-      {loading?<Loading/>:<section className="wrapper grid grid-cols-12 px-2 pb-4">
+      {loading?<Loading/>:<section className="grid grid-cols-12 px-2 pb-4">
         {categories.map((category) => {
           const isOutOfStock = categoryStockMap[category._id] === false;
 
           return (
             <article
               key={category._id}
-              className="flex flex-col justify-center items-center p-4 max-xs:col-span-6 col-span-4 md:col-span-3 lg:md:col-span-2"
+              className="flex flex-col justify-center items-center p-4 max-sm:col-span-6 col-span-4 md:col-span-3 lg:md:col-span-2"
             >
               <Link
                 className="relative group inline-block mb-6 size-[150px] rounded-xl shadow-md cursor-pointer p-1"

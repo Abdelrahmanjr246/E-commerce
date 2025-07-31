@@ -15,7 +15,7 @@ export default function HomeSlider() {
   return (
     <div className='grid grid-cols-12'>
       <div className='col-span-12 md:col-span-12 lg:col-span-8'>
-        <Swiper loop={true} className=' h-full object-cover'>
+        <Swiper loop={true} className='h-[400px] md:h-full object-cover'>
             <SwiperSlide className=' relative'>
               <img src={homeSlider1} className=' h-full object-cover' />
               <div className="flex flex-col p-5 absolute top-0">
@@ -23,7 +23,7 @@ export default function HomeSlider() {
               <FontAwesomeIcon icon={faOpencart} className="text-primary" />
               <span> FreshCart</span>
             </Link></span></h2>
-                <p className="text-sm text-white font-semibold max-w-xl mt-4 shadow-inner bg-opacity-10 p-5 rounded-lg">Whether you’re looking for the freshest produce, pantry staples, or specialty items, FreshCart brings the supermarket to you, redefining the way you shop for groceries.</p>
+                <p className="text-sm text-white font-semibold max-w-xl mt-4 shadow-inner bg-slate-200/10 p-5 rounded-lg">Whether you’re looking for the freshest produce, pantry staples, or specialty items, FreshCart brings the supermarket to you, redefining the way you shop for groceries.</p>
                 <div className="mt-8">
                   <a href="#products-section" className="btn capitalize rounded-full px-6">Get Started</a>
                 </div>

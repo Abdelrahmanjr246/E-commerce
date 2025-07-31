@@ -1,7 +1,3 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
 import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import Layout from "./Pages/Layout/Layout"
 import Home from "./Pages/Home/Home"
@@ -13,7 +9,6 @@ import Login from "./Pages/Login/Login"
 import Register from "./Pages/Register/Register"
 import { Toaster } from "react-hot-toast"
 import Orders from "./Pages/orders/Orders"
-import FavProducts from "./Pages/WishList/WishList"
 import ProtectedRoutes from "./Protected/ProtectedRoutes"
 import AuthContextProvider from "./Context/AuthContext"
 import LoginProtected from "./Protected/LoginProtected"
@@ -52,7 +47,9 @@ function App() {
       {path:'/resetPassword',element: <LoginProtected><ResetPassword/></LoginProtected> },
       {path:'/register',element: <LoginProtected><Register/></LoginProtected> },
     ]}
-  ])
+  ],{
+    basename: import.meta.env.MODE === 'production' ? '/E-commerce' : '/',
+  })
 
 
 

@@ -54,7 +54,7 @@ export default function Navbar() {
           </h1>
 
           {/* Desktop Navigation Links */}
-          <ul className="hidden md:flex items-center gap-5">
+          <ul className="hidden lg:flex items-center gap-5">
             <li className="text-slate-500 hover:text-primary">
               <NavLink to={"/"}>Home</NavLink>
             </li>
@@ -76,7 +76,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: Cart/Fav + Social Icons + Auth Links */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           {/* Cart & Favorites */}
           { token ? 
             <ul className="flex items-center gap-3">
@@ -143,7 +143,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile: Cart/Fav + Hamburger */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <div className="flex items-center gap-3">
             {token ? (
               <>
@@ -180,7 +180,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 mt-3 space-y-2">
+        <div className="lg:hidden px-4 mt-3 space-y-2">
           <ul className="flex flex-col items-center gap-3">
             <li className="text-slate-500 hover:text-primary">
               <NavLink to={"/"} onClick={toggleMenu}>Home</NavLink>

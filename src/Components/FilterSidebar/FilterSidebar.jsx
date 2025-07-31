@@ -1,4 +1,5 @@
 import { X } from 'lucide-react'
+import { useRef, useEffect } from 'react';
 
 export default function FilterSidebar({
   isOpen,
@@ -11,7 +12,34 @@ export default function FilterSidebar({
   setSelectedCategories,
   selectedBrands,
   setSelectedBrands,
+  filterIconRef
 }) {
+
+   const sidebarRef = useRef();
+
+  // Close on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isOpen && sidebarRef.current && !sidebarRef.current.contains(e.target)&&
+  (!filterIconRef.current || !filterIconRef.current.contains(e.target))) {
+        onClose();
+      }
+    };
+
+    const handleEsc = (e) => {
+      if (isOpen && e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEsc);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEsc);
+    };
+  }, [isOpen, onClose]);
 
   const categories = ['Women\'s Fashion', 'Men\'s Fashion', 'Electronics']
   const brands = ['Canon', 'Dell', 'Defacto', 'Puma']
@@ -31,7 +59,8 @@ export default function FilterSidebar({
 
   
   return (
-    <div className={`fixed z-100 top-0 left-0 h-full w-[320px] bg-white shadow-lg px-2 py-1 overflow-y-auto transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+    <aside
+      ref={sidebarRef} className={`fixed z-100 top-0 left-0 h-full w-[320px] bg-white shadow-lg px-2 py-1 overflow-y-auto transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold text-darkPrimary">SORT</h2>
@@ -112,6 +141,6 @@ export default function FilterSidebar({
           ))}
         </div>
       </div>
-    </div>
+    </aside>
   )
 }

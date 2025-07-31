@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Card from '../../Components/Card/Card'
 import axios from 'axios'
 import Loading from '../../Components/Loading/Loading'
-import HomeSlider from '../../Components/HomeSlider/HomeSlider'
-import CategorySlider from '../../Components/CategorySlider/CategorySlider'
 import BackToTop from '../../Components/BackToTop/BackToTop'
 import FilterSidebar from '../../Components/FilterSidebar/FilterSidebar'
 import filterIcon from '../../assets/filter-Bmu1_gjf.png'
@@ -19,6 +17,9 @@ export default function Products() {
   const [selectedCategories, setSelectedCategories] = useState([])
   const [selectedBrands, setSelectedBrands] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
+
+  const filterIconRef = useRef();
+
 
   const getAllProducts = async (page = 1) => {
     try {
@@ -40,7 +41,6 @@ export default function Products() {
     getAllProducts()
   }, [])
 
-  const openSidebar = () => setIsSidebarOpen(true)
   const closeSidebar = () => setIsSidebarOpen(false)
 
   const filteredProducts = products
@@ -82,6 +82,7 @@ export default function Products() {
               setSelectedCategories={setSelectedCategories}
               selectedBrands={selectedBrands}
               setSelectedBrands={setSelectedBrands}
+              filterIconRef={filterIconRef}
             />
 
             <nav className="fixed left-0 right-0 max-xs:flex-wrap pt-[10px] bg-mainBg px-4 pb-3 z-30 flex items-center justify-between mb-3 gap-2 sm:gap-6">
@@ -106,15 +107,19 @@ export default function Products() {
 
               <div className="size-8 cursor-pointer max-xs:order-first">
                 <img
+                  ref={filterIconRef}
                   src={filterIcon}
-                  onClick={openSidebar}
+                  onClick={(e) => {
+    e.stopPropagation(); // prevent closing due to outside click
+    setIsSidebarOpen(prev => !prev);
+  }}
                   className="size-full active:scale-90 duration-150"
                   alt="filter"
                 />
               </div>
             </nav>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4 pt-20 mt-20">
+            <div className="grid grid-cols-12 max-md:px-16 gap-6 p-4 pt-20 mt-20">
               {filteredProducts.map((item) => (
                 <Card itemInfo={item} key={item.id} />
               ))}

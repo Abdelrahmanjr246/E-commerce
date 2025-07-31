@@ -71,6 +71,7 @@ export default function Brands() {
           onClick={()=>{
             handelPageChange(index+1)
           }}
+          key={index+1}
           className='btn'>{index+1}</button>
         ))}
           </div>

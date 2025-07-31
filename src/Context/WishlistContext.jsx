@@ -32,7 +32,6 @@ export default function WishlistContextProvider({ children }) {
         const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/wishlist', {
             headers: { token: localStorage.getItem('token') }
         });
-        console.log("Wishlist data:", data);
         setWishlist(data);
         } catch (err) {
         console.log(err);

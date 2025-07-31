@@ -29,7 +29,7 @@ export default function Cart() {
 
   async function payOnline(values){
     try{
-      const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=http://localhost:5173`,{
+      const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=https://abdelrahmanjr246.github.io/E-commerce/`,{
         shippingAddress: values
       },{
         headers: { token: localStorage.getItem('token') }
@@ -138,7 +138,7 @@ async function payCash(values){
                 </div>
 
               {/* Cart Items */}
-              <div className="divide-y-2 divide-gray-200">
+              <div className="divide-y-2 divide-gray-200 pt-4">
                 {cart?.data?.products.map((item, index) => (
                   <CartItem key={index} item={item} />
                 ))}

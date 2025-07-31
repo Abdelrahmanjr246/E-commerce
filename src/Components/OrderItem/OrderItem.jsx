@@ -34,7 +34,7 @@ export default function OrderItem({order}) {
         
         <div className="md:col-span-12 lg:col-span-8  xl:col-span-10 flex flex-wrap gap-8 ">
             {order?.cartItems?.map((item)=>(
-                <article className="flex gap-6" key={item.id}>
+                <article className="flex gap-6" key={item._id}>
                     
                     <div className="inner w-[150px] shrink-0 h-full rounded-lg overflow-hidden">
                         <img className="w-full h-full object-cover" src={item?.product?.imageCover} alt={item?.product.title} />

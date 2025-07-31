@@ -28,9 +28,7 @@ export default function ProductDetails() {
   async function getProductDetails() {
     try{
       const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`);
-      setProductDetails(data.data);
-      console.log(data.data);
-      
+      setProductDetails(data.data);      
       getRelatedProducts(data.data.category._id);
     }catch(err){
       console.log(err);
@@ -42,11 +40,9 @@ export default function ProductDetails() {
   async function getRelatedProducts(categoryId) {
     try{
       const { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/products?category[in]=${categoryId}`);
-      console.log(data.data);
       setRelated(data.data);
     }catch(err){
       console.log(err);
-      
     }
   }
 
@@ -83,7 +79,7 @@ export default function ProductDetails() {
         <GoBack/>
         <div className="flex flex-col items-center md:flex-row">
           {/* Big Image */}
-          <div className="md:w-1/3 p-4 relative flex flex-col items-center">
+          <div className="md:w-1/3 p-4 relative flex flex-col items-center overflow-hidden">
             <img
               src={productDetails.images[activeImageIndex]}
               alt={productDetails.title}
@@ -213,7 +209,7 @@ export default function ProductDetails() {
             Related products
           </h2>
       </div>
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-12 max-md:px-16 gap-4 p-4">
         {related?.map((item) => (
           <Card itemInfo={item} key={item.id} />
         ))}

@@ -6,7 +6,6 @@ import { cartContext } from '../../Context/CartContext';
 import { wishlistContext } from '../../Context/WishlistContext';
 
 export default function WishlistItem({item}) {
-    console.log(item);
 
 
     let {deleteProductFromWishlist} = useContext(wishlistContext);

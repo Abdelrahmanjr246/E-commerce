@@ -42,7 +42,7 @@ export default function Home() {
       <HomeSlider/>
 
       {/* CATEGORY SLIDER */}
-      <h2 class="font-semibold text-lg -mt-3 mb-2 text-darkPrimary">Shope now by popular categories</h2>
+      <h2 className="font-semibold text-lg -mt-3 mb-2 text-darkPrimary">Shope now by popular categories</h2>
       <CategorySlider/>
 
 
@@ -57,7 +57,7 @@ export default function Home() {
 
 
       {products ? 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
+        <div className="grid grid-cols-12 gap-5 max-md:px-16 pb-4">
           {products.slice(0, 12).map((item) => <Card itemInfo={item} key={item.id}/>)}
         </div> :
         <Loading/>
